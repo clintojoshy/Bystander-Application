@@ -1,0 +1,112 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Input Containers */
+.input-container {
+    margin-bottom: 20px;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-container input,
+.input-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Update Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003f7f;
+}
+
+/* Back Button Container */
+.back-button-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000; /* Ensure it’s above other elements */
+}
+
+/* Back Button Style */
+.back-button {
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Style for Back Button Container */
+.back-button-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000; /* Make sure the button is above other content */
+}
+
+/* Style for Back Button */
+.back-button {
+    display: inline-block;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the back button icon */
+.back-button img {
+    width: 24px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle; /* Align icon with text */
+}

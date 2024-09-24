@@ -1,0 +1,106 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    background-color: #0056b3;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Make sure content is spread to left and right */
+    align-items: center;
+}
+
+/* Dashboard Title (Left) */
+.dashboard-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Navigation Links (Right) */
+.nav-links {
+    display: flex;
+    justify-content: flex-end; /* Ensure links are aligned to the right */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px; /* Add margin to the left to space the links apart */
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* User Information Dropdown (Top Right) */
+.user-info {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.user-info .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.user-info .dropbtn {
+    background-color: #0056b3;
+    color: white;
+    padding: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-info .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.user-info .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-info .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.user-info .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.user-info .dropdown:hover .dropbtn {
+    background-color: #003f7f;
+}
+
+/* Center Welcome Message */
+.welcome-message {
+    margin-top: 150px;
+    text-align: center;
+}
+
+.welcome-message h1 {
+    font-size: 36px;
+    color: #333;
+}

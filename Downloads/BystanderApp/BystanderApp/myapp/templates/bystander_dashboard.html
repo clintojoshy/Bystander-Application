@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bystander Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/bystanderstyle.css' %}">
+</head>
+<body>
+    <!-- Dashboard Header -->
+    <header>
+        <div class="nav-left">
+            <span>Bystander Dashboard</span>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Requests</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+            <div class="user-dropdown">
+                <span>{{ user.email }} <i class="arrow down"></i></span>
+                <div class="dropdown-content">
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+

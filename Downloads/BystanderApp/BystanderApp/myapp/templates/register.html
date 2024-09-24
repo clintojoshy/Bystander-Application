@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/regstyle.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .back-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+        .back-icon a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            position: relative; /* Required for absolute positioning of back icon */
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Icon -->
+    <div class="back-icon">
+        <a href="javascript:history.back()">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="register-container">
+        <h1>Registration Page</h1>
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                <strong></strong> {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+        <form action="/reg/" method="post">
+            {% csrf_token %}
+            
+            <!-- First Name -->
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" name="first_name" placeholder="First Name" required>
+            </div>
+            
+            <!-- Last Name -->
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="input-container">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="input-container">
+                <i class="fas fa-phone"></i>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <!-- Address -->
+            <div class="input-container">
+                <i class="fas fa-home"></i>
+                <input type="text" name="address" placeholder="Address" required>
+            </div>
+
+            <!-- City -->
+            <div class="input-container">
+                <i class="fas fa-city"></i>
+                <input type="text" name="city" placeholder="City" required>
+            </div>
+
+            <!-- State -->
+            <div class="input-container">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" name="state" placeholder="State" required>
+            </div>
+
+            <!-- Gender (Radio Buttons) -->
+            <div class="radio-group">
+                <span><i class="fas fa-venus-mars"></i> Gender:</span>
+                <label>
+                    <input type="radio" name="gender" value="Male" checked> Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Female"> Female
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Other"> Other
+                </label>
+            </div>
+
+            <!-- User Type (Radio Buttons) -->
+            <div class="radio-group">
+                <span><i class="fas fa-user-tag"></i> User Type:</span>
+                <label>
+                    <input type="radio" name="user_type" value="Patient" checked> Patient
+                </label>
+                <label>
+                    <input type="radio" name="user_type" value="Bystander"> Bystander
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>

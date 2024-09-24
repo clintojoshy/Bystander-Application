@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical History</title>
+    <link rel="stylesheet" href="{% static 'css/medical_history.css' %}">
+</head>
+<body>
+
+    <!-- Back Button -->
+    <div class="back-btn">
+        <a href="{% url 'patient_dashboard' %}">← Back</a>
+    </div>
+
+    <!-- Medical History Form -->
+    <div class="container">
+        <h1>Medical History</h1>
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Condition Field with Icon -->
+            <div class="form-group">
+                <label for="condition"><i class="fas fa-stethoscope"></i> Condition</label>
+                <input type="text" id="condition" name="condition" placeholder="e.g., Diabetes, Hypertension" required>
+            </div>
+
+            <!-- Date Diagnosed Field with Icon -->
+            <div class="form-group">
+                <label for="date_diagnosed"><i class="fas fa-calendar-alt"></i> Date Diagnosed</label>
+                <input type="date" id="date_diagnosed" name="date_diagnosed" required>
+            </div>
+
+            <!-- Medications Field with Icon -->
+            <div class="form-group">
+                <label for="medications"><i class="fas fa-pills"></i> Medications</label>
+                <textarea id="medications" name="medications" placeholder="e.g., Metformin 500mg daily"></textarea>
+            </div>
+
+            <!-- Notes Field with Icon -->
+            <div class="form-group">
+                <label for="notes"><i class="fas fa-notes-medical"></i> Notes</label>
+                <textarea id="notes" name="notes" placeholder="Additional notes"></textarea>
+            </div>
+
+            <!-- Status Dropdown Field -->
+            <div class="form-group">
+                <label for="status"><i class="fas fa-heartbeat"></i> Status</label>
+                <select id="status" name="status">
+                    <option value="Active" selected>Active</option>
+                    <option value="Recovered">Recovered</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Success Message -->
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="success-msg">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Medical History List -->
+        <h2>Previously Added Medical History</h2>
+        <div class="history-list">
+            {% for record in medical_history %}
+            <div class="history-item">
+                <p><strong>Condition:</strong> {{ record.condition }}</p>
+                <p><strong>Date Diagnosed:</strong> {{ record.date_diagnosed }}</p>
+                <p><strong>Medications:</strong> {{ record.medications|default_if_none:"None" }}</p>
+                <p><strong>Status:</strong> {{ record.status }}</p>
+                <hr>
+            </div>
+            {% empty %}
+            <p>No medical history available.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

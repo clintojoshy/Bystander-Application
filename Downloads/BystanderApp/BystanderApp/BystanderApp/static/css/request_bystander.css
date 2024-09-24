@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.bystander-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bystander-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.bystander-card:hover {
+  transform: scale(1.02);
+}
+
+.bystander-img img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.bystander-details {
+  flex-grow: 1;
+}
+
+.bystander-details h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.bystander-details p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.divider {
+  border: 1px solid #ddd;
+  width: 80%;
+  margin: 0 auto;
+}
+.back-btn {
+  margin: 20px;
+}
+
+.back-btn a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.back-btn a:hover {
+  color: #4CAF50;
+}

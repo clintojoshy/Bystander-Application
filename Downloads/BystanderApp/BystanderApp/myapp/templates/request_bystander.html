@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bystander List</title>
+    <link rel="stylesheet" href="{% static 'css/request_bystander.css' %}">
+</head>
+<body>
+  <div class="back-btn">
+    <a href="{% url 'patient_dashboard' %}">← Back</a>
+  </div>
+  
+    <h1>Bystander Details</h1>
+    <div class="bystander-list">
+        {% for bystander in bystanders %}
+        <div class="bystander-card">
+            <div class="bystander-img">
+                <img src="{% static 'images/default_bystander.jpg' %}" alt="Bystander Image">
+            </div>
+            <div class="bystander-details">
+                <h2>{{ bystander.name }}</h2>
+                <p><strong>Place:</strong> {{ bystander.city }}, {{ bystander.state }}</p>
+                <p><strong>Age:</strong> 28 <!-- Placeholder for now --> </p>
+                <p><strong>Location:</strong> {{ bystander.address }}</p>
+                <p><strong>Status:</strong> Available <!-- Add logic for availability if needed --> </p>
+                <p><strong>Amount per day:</strong> $50.00 <!-- Placeholder for now --> </p>
+            </div>
+        </div>
+        <hr class="divider">
+        {% endfor %}
+    </div>
+</body>
+</html>
